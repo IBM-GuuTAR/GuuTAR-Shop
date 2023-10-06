@@ -16,7 +16,29 @@ services:
       - redis:/var/lib/redis
       - redis-config:/usr/local/etc/redis/redis.conf
     ports:
-      - 6379:6379
+      - 6379:6379'
+
+  instana-agent:
+    container_name: instana-agent
+    image: icr.io/instana/agent
+    volumes:
+      - /var/run:/var/run
+      - /run:/run
+      - /dev:/dev:ro
+      - /sys:/sys:ro
+      - /var/log:/var/log:ro
+    privileged: true
+    pid: "host"
+    net: "host"
+    
+    environment:
+      - INSTANA_AGENT_ENDPOINT=${INSTANA_AGENT_ENDPOINT}
+      - INSTANA_AGENT_ENDPOINT_PORT=${INSTANA_AGENT_ENDPOINT_PORT}
+      - INSTANA_AGENT_KEY=${INSTANA_AGENT_KEY}
+      - INSTANA_DOWNLOAD_KEY=${INSTANA_DOWNLOAD_KEY}
+      - INSTANA_AGENT_ZONE=${INSTANA_AGENT_ZONE}
+    expose:
+      - 42699
 
 volumes:
   redis:
