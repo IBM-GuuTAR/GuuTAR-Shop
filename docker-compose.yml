@@ -16,7 +16,7 @@ services:
       - redis:/var/lib/redis
       - redis-config:/usr/local/etc/redis/redis.conf
     ports:
-      - 6379:6379'
+      - '6379:6379'
 
   instana-agent:
     container_name: instana-agent
@@ -28,9 +28,7 @@ services:
       - /sys:/sys:ro
       - /var/log:/var/log:ro
     privileged: true
-    pid: "host"
-    net: "host"
-    
+    pid: "host"    
     environment:
       - INSTANA_AGENT_ENDPOINT=${INSTANA_AGENT_ENDPOINT}
       - INSTANA_AGENT_ENDPOINT_PORT=${INSTANA_AGENT_ENDPOINT_PORT}
