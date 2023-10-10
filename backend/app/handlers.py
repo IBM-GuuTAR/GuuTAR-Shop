@@ -8,9 +8,7 @@ app = FastAPI(
     docs_url="/api/docs"
 )
 
-origins = [
-    "http://localhost:3000"
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware, 
