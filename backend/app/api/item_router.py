@@ -19,4 +19,4 @@ def edit_item(item_id: str, body: EditItemPayload = Body(...)):
 
 @router.delete("/delete-item/{item_id}")
 def delete_item(item_id: str): 
-    return delete_item_service(item_id)
+    return delete_item_service(int(item_id))

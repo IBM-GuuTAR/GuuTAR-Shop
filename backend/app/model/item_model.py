@@ -1,7 +1,8 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class Item(BaseModel):
-    id: int
+    id: Optional[int]
     name: str
     price: int
     picture_url: str

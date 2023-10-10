@@ -20,7 +20,7 @@ def get_item_service():
     
 def create_new_item_service(item: CreateNewItemPayload): 
     try:
-        item = item_model_to_dict(item)
+        item = vars(item)
         item["id"] = len(items)
 
         items.append(item)
