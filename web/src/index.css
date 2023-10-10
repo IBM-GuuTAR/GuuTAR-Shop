@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FlexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.FlexCol {
+  display: flex;
+  flex-direction: column;
+}
