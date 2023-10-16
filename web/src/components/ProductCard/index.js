@@ -1,7 +1,9 @@
+import { BACKEND_ENDPOINT } from "../../config/config";
+
 function ProductCard({ id, name, price, picture_url }) {
   const handleDelete = async () => {
     const result = await fetch(
-      `http://localhost:8000/api/items/delete-item/${id}`,
+      `${BACKEND_ENDPOINT}/api/items/delete-item/${id}`,
       {
         method: "DELETE",
         headers: {

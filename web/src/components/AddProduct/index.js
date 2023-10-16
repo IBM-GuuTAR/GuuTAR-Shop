@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BACKEND_ENDPOINT } from "../../config/config";
 
 function AddProduct({ setIsShowAddProduct }) {
   const [name, setName] = useState("")
@@ -6,7 +7,7 @@ function AddProduct({ setIsShowAddProduct }) {
   const [pictureUrl, setPictureUrl] = useState()
 
   const handleAdd = async () => {
-    const result = await fetch("http://localhost:8000/api/items/create-item", {
+    const result = await fetch(`${BACKEND_ENDPOINT}/api/items/create-item`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

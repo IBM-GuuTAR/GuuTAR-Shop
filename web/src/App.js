@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css';
 import ProductCard from './components/ProductCard';
 import AddProduct from './components/AddProduct';
+import { BACKEND_ENDPOINT } from './config/config';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchProductData = async () => {
-      const rawData = await fetch("http://localhost:8000/api/items/get-items")
+      const rawData = await fetch(`${BACKEND_ENDPOINT}/api/items/get-items`)
       const response = (await rawData.json())?.data
 
       if (response) {
@@ -22,7 +23,7 @@ function App() {
     }
 
     const fetchGreetingMsg = async () => {
-      const rawData = await fetch("http://localhost:8000/api/greeting/")
+      const rawData = await fetch(`${BACKEND_ENDPOINT}/api/greeting/`)
       const response = (await rawData.json())?.data
 
       if (response) {
