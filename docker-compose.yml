@@ -6,6 +6,8 @@ services:
       context: ./web
     ports:
       - '80:80'
+    networks:
+      - web-service
 
   backend:
     container_name: guutar-shop-backend
@@ -14,6 +16,9 @@ services:
     restart: always
     ports:
       - '8000:8000'
+    networks:
+      - web-service
+      
   redis:
     container_name: redis
     image: redis:latest
@@ -48,3 +53,6 @@ services:
 volumes:
   redis:
   redis-config:
+
+networks:
+  web-service:
