@@ -22,6 +22,10 @@ app.add_middleware(
 async def root():
     return {"message": "Hello World"}
 
+@app.get("/api")
+async def greeting():
+    return {"message": "Hello World"}
+
 app.include_router(
     item_router.router,
     prefix="/api/items"
