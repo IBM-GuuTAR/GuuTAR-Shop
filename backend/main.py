@@ -1,5 +1,5 @@
 from app.handlers import app
-
+import instana
 import uvicorn
 
 if __name__ == "__main__":

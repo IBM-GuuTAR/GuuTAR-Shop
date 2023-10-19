@@ -9,6 +9,7 @@ uvicorn = {extras = ["standard"], version = "*"}
 starlette = "*"
 pydantic = "*"
 redis = "*"
+instana = {ref = "v2.0.7", git = "git+https://github.com/instana/python-sensor"}
 
 [dev-packages]
 
